@@ -8,8 +8,8 @@ typedef quint8 type;
 #define LHI(x) ((type)(((word)(x)>>16)&255))
 #define HLO(x) ((type)(((word)(x)>>8)&255))
 #define LLO(x) ((type)((word)(x)&255))
-#define MAX(x,y) ((x)>(y)?(x):(y))
-#define MIN(x,y) ((x)<(y)?(x):(y))
+#define MAX(x,y) ((x)>(y)?(x):(y))//最大值
+#define MIN(x,y) ((x)<(y)?(x):(y))//最小值
 
 int main()
 {
@@ -25,7 +25,7 @@ int main()
 int i_new =(HLO(i)<<24)+(HHI(i)<<16)+(LLO(i)<<8)+LHI(i);
 qDebug("重新组合后的数值：0x%x==%d",i_new,i_new);
 qDebug("排序前：<%d,%d,%d,%d>",Values.at(0),Values.at(1),Values.at(2),Values.at(3));
-std::sort(Values.begin(),Values.end(),std::greater<int>());
+std::sort(Values.begin(),Values.end(),std::greater<int>());//从大到小排序
 qDebug("排序后：<%d,%d,%d,%d>",Values.at(0),Values.at(1),Values.at(2),Values.at(3));
     return 0;
 }
